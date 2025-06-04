@@ -1,0 +1,102 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminSite.master.cs" Inherits="DescubreMexico2.AdminSite" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <link href="/Content/sweetalert.css" rel="stylesheet" />
+    <script src="/Scripts/sweetalert.min.js"></script>
+
+    <title><asp:ContentPlaceHolder ID="title" runat="server"></asp:ContentPlaceHolder></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.aspx">Descubre México</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.aspx">Gestion</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categorias
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="../pages/Usuarios/Usuarios.aspx">Usuarios</a></li>
+                  <li><a class="dropdown-item" href="angel.aspx">Guias</a></li>
+                  <li><a class="dropdown-item" href="bellas_artes.aspx">Lugares</a></li>
+                  <li><a class="dropdown-item" href="bellas_artes.aspx">Recorridos</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="galeria.aspx">Agenda</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+</header>
+    <form id="form1" runat="server">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+    </form>
+    <footer class="bg-dark text-white pt-4 pb-3">
+    <div class="container">
+      <div class="row">
+        <!-- Columna de enlaces -->
+        <div class="col-md-4 mb-3">
+          <h5>Enlaces</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Inicio</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Galería</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Mapa</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Historias</a></li>
+          </ul>
+        </div>
+  
+        <!-- Columna de contacto -->
+        <div class="col-md-4 mb-3">
+          <h5>Contacto</h5>
+          <p>Email: jackcorderod@outlook.com</p>
+          <p>Tel: +52 2215731770</p>
+        </div>
+  
+        <!-- Columna de redes sociales -->
+        <div class="col-md-4 mb-3">
+          <h5>Síguenos</h5>
+            <a href="#" class="text-white me-3"><i id="facebook" class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-3"><i id="instagram" class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white me-3"><i id="twitter" class="fab fa-x-twitter"></i></a>
+            <a href="#" class="text-white"><i id="youtube" class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+  
+      <hr class="bg-white">
+  
+      <div class="text-center">
+        <small>&copy; 2025 JackCord. Todos los derechos reservados.</small>
+      </div>
+    </div>
+  </footer>
+    <script src="/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <asp:ContentPlaceHolder ID="linksJs" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
