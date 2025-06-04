@@ -154,6 +154,8 @@
     <Content Include="pages\Gestion\GuiaAlta.aspx" />
     <Content Include="pages\Gestion\GuiaEditar.aspx" />
     <Content Include="pages\Gestion\Guias.aspx" />
+    <Content Include="pages\Gestion\RecorridoAlta.aspx" />
+    <Content Include="pages\Gestion\RecorridoEditar.aspx" />
     <Content Include="pages\Index.aspx" />
     <Content Include="pages\Gestion\LugarAlta.aspx" />
     <Content Include="pages\Gestion\LugarEditar.aspx" />
@@ -313,6 +315,20 @@
     </Compile>
     <Compile Include="pages\Gestion\Guias.aspx.designer.cs">
       <DependentUpon>Guias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Gestion\RecorridoAlta.aspx.cs">
+      <DependentUpon>RecorridoAlta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Gestion\RecorridoAlta.aspx.designer.cs">
+      <DependentUpon>RecorridoAlta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Gestion\RecorridoEditar.aspx.cs">
+      <DependentUpon>RecorridoEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Gestion\RecorridoEditar.aspx.designer.cs">
+      <DependentUpon>RecorridoEditar.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

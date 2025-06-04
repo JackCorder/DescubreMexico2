@@ -13,5 +13,14 @@ namespace DescubreMexico2.pages.Gestion
 
     public partial class GestionIndex
     {
+
+        /// <summary>
+        /// Control GVRecorridos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVRecorridos;
     }
 }
