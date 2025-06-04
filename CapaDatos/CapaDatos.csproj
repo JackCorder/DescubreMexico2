@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Configuracion.cs" />
     <Compile Include="DalAgendas.cs" />
+    <Compile Include="DalGuias.cs" />
     <Compile Include="DalUsuarios.cs" />
     <Compile Include="MetodosDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

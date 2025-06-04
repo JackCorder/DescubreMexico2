@@ -95,7 +95,9 @@ namespace CapaDatos
                 {
                     for (int i = 0; i < parametros.Length; i = i + 2)
                     {
-                        cmd.Parameters.AddWithValue(parametros[i].ToString(), parametros[i + 1].ToString());
+                        string nombreParametro = parametros[i].ToString();
+                        object valorParametro = parametros[i + 1] ?? DBNull.Value; // Usa DBNull para valores nulos
+                        cmd.Parameters.AddWithValue(nombreParametro, valorParametro);
                     }
 
                     conn.Open();

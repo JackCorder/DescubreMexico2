@@ -39,7 +39,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="../pages/Usuarios/Usuarios.aspx">Usuarios</a></li>
-                  <li><a class="dropdown-item" href="angel.aspx">Guias</a></li>
+                  <li><a class="dropdown-item" href="../pages/Guias/Guias.aspx">Guias</a></li>
                   <li><a class="dropdown-item" href="bellas_artes.aspx">Lugares</a></li>
                   <li><a class="dropdown-item" href="bellas_artes.aspx">Recorridos</a></li>
                 </ul>
