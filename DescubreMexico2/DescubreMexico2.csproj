@@ -150,14 +150,17 @@
     <Content Include="pages\bellas_artes.aspx" />
     <Content Include="pages\centro_historico.aspx" />
     <Content Include="pages\galeria.aspx" />
-    <Content Include="pages\GestionIndex.aspx" />
-    <Content Include="pages\Guias\GuiaAlta.aspx" />
-    <Content Include="pages\Guias\GuiaEditar.aspx" />
-    <Content Include="pages\Guias\Guias.aspx" />
+    <Content Include="pages\Gestion\GestionIndex.aspx" />
+    <Content Include="pages\Gestion\GuiaAlta.aspx" />
+    <Content Include="pages\Gestion\GuiaEditar.aspx" />
+    <Content Include="pages\Gestion\Guias.aspx" />
     <Content Include="pages\Index.aspx" />
-    <Content Include="pages\Usuarios\UsuarioAlta.aspx" />
-    <Content Include="pages\Usuarios\UsuarioEdit.aspx" />
-    <Content Include="pages\Usuarios\Usuarios.aspx" />
+    <Content Include="pages\Gestion\LugarAlta.aspx" />
+    <Content Include="pages\Gestion\LugarEditar.aspx" />
+    <Content Include="pages\Gestion\Lugares.aspx" />
+    <Content Include="pages\Gestion\UsuarioAlta.aspx" />
+    <Content Include="pages\Gestion\UsuarioEdit.aspx" />
+    <Content Include="pages\Gestion\Usuarios.aspx" />
     <Content Include="Scripts\agendar.js" />
     <Content Include="Scripts\angel.js" />
     <Content Include="Scripts\bellas-artes.js" />
@@ -283,32 +286,32 @@
     <Compile Include="pages\galeria.aspx.designer.cs">
       <DependentUpon>galeria.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\GestionIndex.aspx.cs">
+    <Compile Include="pages\Gestion\GestionIndex.aspx.cs">
       <DependentUpon>GestionIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\GestionIndex.aspx.designer.cs">
+    <Compile Include="pages\Gestion\GestionIndex.aspx.designer.cs">
       <DependentUpon>GestionIndex.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\Guias\GuiaAlta.aspx.cs">
+    <Compile Include="pages\Gestion\GuiaAlta.aspx.cs">
       <DependentUpon>GuiaAlta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\Guias\GuiaAlta.aspx.designer.cs">
+    <Compile Include="pages\Gestion\GuiaAlta.aspx.designer.cs">
       <DependentUpon>GuiaAlta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\Guias\GuiaEditar.aspx.cs">
+    <Compile Include="pages\Gestion\GuiaEditar.aspx.cs">
       <DependentUpon>GuiaEditar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\Guias\GuiaEditar.aspx.designer.cs">
+    <Compile Include="pages\Gestion\GuiaEditar.aspx.designer.cs">
       <DependentUpon>GuiaEditar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\Guias\Guias.aspx.cs">
+    <Compile Include="pages\Gestion\Guias.aspx.cs">
       <DependentUpon>Guias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\Guias\Guias.aspx.designer.cs">
+    <Compile Include="pages\Gestion\Guias.aspx.designer.cs">
       <DependentUpon>Guias.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Index.aspx.cs">
@@ -318,25 +321,46 @@
     <Compile Include="pages\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\Usuarios\UsuarioAlta.aspx.cs">
+    <Compile Include="pages\Gestion\LugarAlta.aspx.cs">
+      <DependentUpon>LugarAlta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Gestion\LugarAlta.aspx.designer.cs">
+      <DependentUpon>LugarAlta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Gestion\LugarEditar.aspx.cs">
+      <DependentUpon>LugarEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Gestion\LugarEditar.aspx.designer.cs">
+      <DependentUpon>LugarEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Gestion\Lugares.aspx.cs">
+      <DependentUpon>Lugares.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Gestion\Lugares.aspx.designer.cs">
+      <DependentUpon>Lugares.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Gestion\UsuarioAlta.aspx.cs">
       <DependentUpon>UsuarioAlta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\Usuarios\UsuarioAlta.aspx.designer.cs">
+    <Compile Include="pages\Gestion\UsuarioAlta.aspx.designer.cs">
       <DependentUpon>UsuarioAlta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\Usuarios\UsuarioEdit.aspx.cs">
+    <Compile Include="pages\Gestion\UsuarioEdit.aspx.cs">
       <DependentUpon>UsuarioEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\Usuarios\UsuarioEdit.aspx.designer.cs">
+    <Compile Include="pages\Gestion\UsuarioEdit.aspx.designer.cs">
       <DependentUpon>UsuarioEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\Usuarios\Usuarios.aspx.cs">
+    <Compile Include="pages\Gestion\Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\Usuarios\Usuarios.aspx.designer.cs">
+    <Compile Include="pages\Gestion\Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -367,8 +391,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="pages\Agenda\" />
-    <Folder Include="pages\Lugares\" />
-    <Folder Include="pages\Recorridos\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -38,15 +38,18 @@
                   Categorias
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="../pages/Usuarios/Usuarios.aspx">Usuarios</a></li>
-                  <li><a class="dropdown-item" href="../pages/Guias/Guias.aspx">Guias</a></li>
-                  <li><a class="dropdown-item" href="bellas_artes.aspx">Lugares</a></li>
-                  <li><a class="dropdown-item" href="bellas_artes.aspx">Recorridos</a></li>
+                  <li><a class="dropdown-item" href="Usuarios.aspx">Usuarios</a></li>
+                  <li><a class="dropdown-item" href="Guias.aspx">Guias</a></li>
+                  <li><a class="dropdown-item" href="Lugares.aspx">Lugares</a></li>
+                  <li><a class="dropdown-item" href="Recorridos.aspx">Recorridos</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="galeria.aspx">Agenda</a>
+                <a class="nav-link" href="agenda.aspx">Agenda</a>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="../index.aspx">Salir</a>
+                </li>
             </ul>
           </div>
         </div>
