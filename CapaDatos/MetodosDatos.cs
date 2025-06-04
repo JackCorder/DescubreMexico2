@@ -169,5 +169,39 @@ namespace CapaDatos
             }
         }
 
+        //Llamar una Vista
+        public static DataSet ExecuteView(string viewName)
+        {
+            DataSet ds = new DataSet();
+            string cadenaConexion = Configuracion.CadenaConexion;
+
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
+            {
+                try
+                {
+                    string query = $"SELECT * FROM {viewName}";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.CommandType = CommandType.Text;
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    conn.Open();
+                    adapter.Fill(ds);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return null;
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open)
+                        conn.Close();
+                }
+            }
+
+            return ds;
+        }
+
     }
 }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AgendaVO.cs" />
     <Compile Include="GuiaVO.cs" />
+    <Compile Include="TipoRecorridoVO.cs" />
     <Compile Include="LugaresVO.cs" />
     <Compile Include="OpinionVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

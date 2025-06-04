@@ -26,5 +26,12 @@ namespace DescubreMexico2.Util
             Tesla
         }
 
-    }
+        public enum Dificultad
+        {
+            baja,
+            media,
+            alta
+        }
+
+}
 }

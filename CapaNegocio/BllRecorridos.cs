@@ -108,7 +108,7 @@ namespace CapaNegocio
             }
         }
 
-        public static List<RecorridoVO> GetLstRecorridos(int paramIdGuia, int paramIdTipo, string paramDificultad)
+        public static List<RecorridoVO> GetLstRecorridos(int? paramIdGuia, int? paramIdTipo, string paramDificultad)
         {
             List<RecorridoVO> Lst = new List<RecorridoVO>();
             try
