@@ -102,6 +102,45 @@
     </div>
     <br /><br /><br />
 
+
+    <!-- Tabla de Recorrido Lugares -->
+    <div class="container mt-3">
+        <div class="card shadow">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0">Lugares del Recorrido</h5>
+            </div>
+            <div class="card-body">
+
+                <!-- Inputs para agregar nuevo -->
+                <div class="row mb-3">
+                    <div class="col-md-5">
+                        <asp:Label ID="lblIdLugarNuevo" runat="server" Text="Lugar" CssClass="form-label"></asp:Label>
+                        <asp:DropDownList ID="ddlIdLugarNuevo" runat="server" CssClass="form-control">
+                        </asp:DropDownList>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <asp:Button ID="btnAgregarLugar" runat="server" Text="Agregar" CssClass="btn btn-primary w-100" OnClick="btnAgregarLugar_Click" />
+                    </div>
+                </div>
+                <br>
+                <!-- Tabla para mostrar los lugares del recorrido -->
+                <asp:GridView ID="gvLugaresRecorrido" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered"
+                    DataKeyNames="IdRecorridoLugar" OnRowCommand="gvLugaresRecorrido_RowCommand">
+                    <Columns>
+                        <asp:BoundField DataField="IdRecorridoLugar" HeaderText="ID RLugar" Visible="False" />
+                        <asp:BoundField DataField="IdRecorrido" HeaderText="ID Recorrido" Visible="False" />
+                        <asp:BoundField DataField="IdLugar" HeaderText="ID Lugar" Visible="False" />
+                        <asp:BoundField DataField="Lugar" HeaderText="Nombre Lugar" />
+                        <asp:ImageField DataImageUrlField="ImagenUrl" HeaderText="Imagen" ControlStyle-Width="60px" ControlStyle-Height="60px" />
+
+                        <asp:ButtonField ButtonType="Button" CommandName="Eliminar" Text="Eliminar" ControlStyle-CssClass="btn btn-danger btn-sm" />
+                    </Columns>
+                </asp:GridView>
+
+            </div>
+        </div>
+    </div>
+    <br><br><br>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="linksJs" runat="server">
 </asp:Content>

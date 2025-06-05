@@ -31,7 +31,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.aspx">Gestion</a>
+                <a class="nav-link active" aria-current="page" href="GestionIndex.aspx">Gestion</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -41,12 +41,11 @@
                   <li><a class="dropdown-item" href="Usuarios.aspx">Usuarios</a></li>
                   <li><a class="dropdown-item" href="Guias.aspx">Guias</a></li>
                   <li><a class="dropdown-item" href="Lugares.aspx">Lugares</a></li>
-                  <li><a class="dropdown-item" href="Recorridos.aspx">Recorridos</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
+              <%--<li class="nav-item">
                 <a class="nav-link" href="agenda.aspx">Agenda</a>
-              </li>
+              </li>--%>
               <li class="nav-item">
                   <a class="nav-link" href="../index.aspx">Salir</a>
                 </li>

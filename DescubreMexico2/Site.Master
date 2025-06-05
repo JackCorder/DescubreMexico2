@@ -48,7 +48,7 @@
                     <a class="nav-link" href="agendar.aspx">Agendar Recorrido</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="Gestion/GestionIndex.aspx">Gestion</a>
+                    <a class="nav-link" href="Login.aspx">Gestion</a>
                   </li>
                 </ul>
               </div>
