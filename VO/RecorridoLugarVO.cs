@@ -11,9 +11,9 @@ namespace VO
     {
         private int _IdRecorridoLugar;
         private int _IdRecorrido;
-        private string _Recorrido;
         private int _IdLugar;
         private string _Lugar;
+        private string _ImagenUrl;
 
         public int IdRecorridoLugar
         {
@@ -23,11 +23,6 @@ namespace VO
         public int IdRecorrido
         {
             get => _IdRecorrido;set => _IdRecorrido = value;
-        }
-
-        public string Recorrido
-        {
-            get => _Recorrido; set => _Recorrido = value;
         }
         public int IdLugar
         {
@@ -39,22 +34,27 @@ namespace VO
             set => _Lugar = value;
         }
 
+        public string ImagenUrl
+        {
+            get => _ImagenUrl;
+            set => _ImagenUrl = value;
+        }
         public RecorridoLugarVO(DataRow dr)
         {
             IdRecorridoLugar = int.Parse(dr["IdRecorridoLugar"].ToString());
             IdRecorrido = int.Parse(dr["IdRecorrido"].ToString());
-            Recorrido = dr["Recorrido"].ToString();
             IdLugar = int.Parse(dr["IdLugar"].ToString());
-            Lugar = dr["Lugar"].ToString();
+            Lugar = dr["NombreLugar"].ToString();
+            ImagenUrl = dr["ImagenUrl"].ToString();
         }
 
         public RecorridoLugarVO()
         {
             IdRecorridoLugar = 0;
             IdRecorrido = 0;
-            Recorrido = string.Empty;
             IdLugar = 0;
             Lugar = string.Empty;
+            ImagenUrl = string.Empty;
         }
     }
 

@@ -17,52 +17,60 @@ namespace DescubreMexico2.pages.Gestion
         {
             if (!IsPostBack)
             {
-                if (Request.QueryString["Id"] == null)
+                RefrescarGrid();
+            }
+        }
+
+        public void RefrescarGrid()
+        {
+            if (Request.QueryString["Id"] == null)
+            {
+                Response.Redirect("GestionIndex.aspx");
+            }
+            else
+            {
+                //Obtener Id del chofer
+                int IdRecorrido = int.Parse(Request.QueryString["Id"]);
+                RecorridoVO recorrido = BllRecorridos.GetRecorridoById(IdRecorrido);
+
+                //Validar que el chofer es correcto
+                if (recorrido.IdRecorrido == IdRecorrido)
                 {
-                    Response.Redirect("GestionIndex.aspx");
+                    //Desplegar la información del chofer
+                    this.lblIdRecorrido.Text = IdRecorrido.ToString();
+                    this.txtTitulo.Text = recorrido.Titulo.ToString();
+                    this.txtDescripcion.Text = recorrido.Descripcion.ToString();
+                    this.ddlTipoRecorrido.SelectedValue = recorrido.IdTipo.ToString();
+                    this.txtDuracionHoras.Text = recorrido.DuracionHoras.ToString();
+                    this.txtPrecio.Text = recorrido.Precio.ToString();
+                    this.ddlDificultad.SelectedValue = recorrido.Dificultad.ToString();
+                    this.txtMaxParticipantes.Text = recorrido.MaxParticipantes.ToString();
+                    this.ddlGuia.SelectedValue = recorrido.IdGuia.ToString();
+                    this.chkActivo.Checked = recorrido.Activo;
+
+                    CargarLugaresDelRecorrido();
+
+                    // Llenar dificultad desde Enum
+                    ddlDificultad.DataSource = Enum.GetNames(typeof(Dificultad));
+                    ddlDificultad.DataBind();
+
+                    // Llenar Tipo Recorrido desde base de datos
+                    ddlTipoRecorrido.DataSource = BllTiposRecorridos.GetLstTiposR(); // debe devolver DataTable o List
+                    ddlTipoRecorrido.DataTextField = "Nombre";   // nombre visible
+                    ddlTipoRecorrido.DataValueField = "IdTipoRecorrido";  // valor al guardar
+                    ddlTipoRecorrido.DataBind();
+
+                    // Llenar Guías desde base de datos
+                    ddlGuia.DataSource = BllGuias.GetLstGuias(true); // debe devolver DataTable o List
+                    ddlGuia.DataTextField = "Nombre";
+                    ddlGuia.DataValueField = "IdGuia";
+                    ddlGuia.DataBind();
+
+
                 }
                 else
                 {
-                    //Obtener Id del chofer
-                    int IdRecorrido = int.Parse(Request.QueryString["Id"]);
-                    RecorridoVO recorrido = BllRecorridos.GetRecorridoById(IdRecorrido);
-
-                    //Validar que el chofer es correcto
-                    if (recorrido.IdRecorrido == IdRecorrido)
-                    {
-                        //Desplegar la información del chofer
-                        this.lblIdRecorrido.Text = IdRecorrido.ToString();
-                        this.txtTitulo.Text = recorrido.Titulo.ToString();
-                        this.txtDescripcion.Text = recorrido.Descripcion.ToString();
-                        this.ddlTipoRecorrido.SelectedValue = recorrido.IdTipo.ToString();
-                        this.txtDuracionHoras.Text = recorrido.DuracionHoras.ToString();
-                        this.txtPrecio.Text = recorrido.Precio.ToString();
-                        this.ddlDificultad.SelectedValue = recorrido.Dificultad.ToString();
-                        this.txtMaxParticipantes.Text = recorrido.MaxParticipantes.ToString();
-                        this.ddlGuia.SelectedValue = recorrido.IdGuia.ToString();
-                        this.chkActivo.Checked = recorrido.Activo;
-
-
-                        // Llenar dificultad desde Enum
-                        ddlDificultad.DataSource = Enum.GetNames(typeof(Dificultad));
-                        ddlDificultad.DataBind();
-
-                        // Llenar Tipo Recorrido desde base de datos
-                        ddlTipoRecorrido.DataSource = BllTiposRecorridos.GetLstTiposR(); // debe devolver DataTable o List
-                        ddlTipoRecorrido.DataTextField = "Nombre";   // nombre visible
-                        ddlTipoRecorrido.DataValueField = "IdTipoRecorrido";  // valor al guardar
-                        ddlTipoRecorrido.DataBind();
-
-                        // Llenar Guías desde base de datos
-                        ddlGuia.DataSource = BllGuias.GetLstGuias(true); // debe devolver DataTable o List
-                        ddlGuia.DataTextField = "Nombre";
-                        ddlGuia.DataValueField = "IdGuia";
-                        ddlGuia.DataBind();
-                    }
-                    else
-                    {
-                        Response.Redirect("GestionIndex.aspx");
-                    }
+                    Response.Redirect("GestionIndex.aspx");
                 }
             }
         }
@@ -94,6 +102,46 @@ namespace DescubreMexico2.pages.Gestion
             }
             
 
+        }
+
+        private void CargarLugaresDelRecorrido()
+        {
+            int idRecorrido = int.Parse(this.lblIdRecorrido.Text);
+            gvLugaresRecorrido.DataSource = BllRecorridoLugar.GetLstRecorridoLugar(idRecorrido);
+            gvLugaresRecorrido.DataBind();
+
+            ddlIdLugarNuevo.DataSource = BllLugares.GetLstLugares(null); // Tu método para obtener lugares
+            ddlIdLugarNuevo.DataTextField = "Nombre";             // Nombre que verá el usuario
+            ddlIdLugarNuevo.DataValueField = "IdLugar";           // Valor interno (ID)
+            ddlIdLugarNuevo.DataBind();
+        }
+
+        protected void btnAgregarLugar_Click(object sender, EventArgs e)
+        {
+            int idRecorrido = int.Parse(this.lblIdRecorrido.Text);
+            int idLugar = int.Parse(ddlIdLugarNuevo.SelectedValue);
+
+            BllRecorridoLugar.InsLugar(idRecorrido, idLugar); // Método que tú defines
+
+            RefrescarGrid();
+
+            UtilControls.SweetBox("Lugar agregado", "", "success", this.Page, this.GetType());
+        }
+
+        protected void gvLugaresRecorrido_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Eliminar")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = gvLugaresRecorrido.Rows[index];
+                int idRecorridoLugar = Convert.ToInt32(gvLugaresRecorrido.DataKeys[index].Value);
+
+                BllRecorridoLugar.DelRecorridoLugar(idRecorridoLugar); // Método que tú defines
+
+                RefrescarGrid();
+
+                UtilControls.SweetBox("Lugar eliminado", "", "success", this.Page, this.GetType());
+            }
         }
     }
 }
