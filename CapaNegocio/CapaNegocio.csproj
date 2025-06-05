@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BllRecorridoLugar.cs" />
     <Compile Include="BllTiposRecorridos.cs" />
     <Compile Include="BllRecorridos.cs" />
     <Compile Include="BllGuias.cs" />

@@ -103,5 +103,30 @@ namespace CapaDatos
             }
             catch { throw; }
         }
+
+
+        public static string GetUsuarioByEmail(string paramEmail)
+        {
+
+            try
+            {
+                DataSet dsUsuario = MetodosDatos.ExecuteDataSet("sp_usuario_conseguir_Email", "@Email", paramEmail);
+
+                if (dsUsuario.Tables[0].Rows.Count > 0)
+                {
+                    DataRow dr = dsUsuario.Tables[0].Rows[0];
+                    UsuarioVO usuario = new UsuarioVO(dr);
+
+                    return usuario.Contraseña;
+                }
+                else
+                {
+                    UsuarioVO usuario = new UsuarioVO();
+                    return usuario.Contraseña;
+                }
+            }
+            catch { throw; }
+        }
+
     }
 }

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuracion.cs" />
+    <Compile Include="DalRecorridoLugar.cs" />
     <Compile Include="DalTiposRecorridos.cs" />
     <Compile Include="DalAgendas.cs" />
     <Compile Include="DalGuias.cs" />

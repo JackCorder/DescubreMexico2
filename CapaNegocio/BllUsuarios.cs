@@ -109,6 +109,20 @@ namespace CapaNegocio
             }
         } // del GetCamionById
 
+
+        public static string GetUsuarioByEmail(string Email)
+        {
+            try
+            {
+                string pass = DalUsuarios.GetUsuarioByEmail(Email);
+                return pass;
+            }
+            catch (Exception ex)
+            {
+                return "";
+            }
+        } 
+
         public static List<UsuarioVO> GetLstUsuarios(bool? Activo)
         {
             List<UsuarioVO> LstUsuarios = new List<UsuarioVO>();
