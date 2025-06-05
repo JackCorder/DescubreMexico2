@@ -10,46 +10,15 @@ namespace CapaDatos
 {
     public class DalAgendas
     {
-        public static List<AgendaVO> GetListAgendas(int? paramIdRecorrido, string paramEstado, DateTime? paramFechaDesde, DateTime? paramFechaHasta)
+        public static List<AgendaVO> GetListAgendas()
         {
             try
             {
                 DataSet dsAgendas;
                 // Armado dinámico de parámetros
-                List<object> parametros = new List<object>();
-
-                if (paramIdRecorrido.HasValue)
-                {
-                    parametros.Add("@IdRecorrido");
-                    parametros.Add(paramIdRecorrido.Value);
-                }
-
-                if (!string.IsNullOrEmpty(paramEstado))
-                {
-                    parametros.Add("@Estado");
-                    parametros.Add(paramEstado);
-                }
-
-                if (paramFechaDesde.HasValue)
-                {
-                    parametros.Add("@FechaDesde");
-                    parametros.Add(paramFechaDesde.Value);
-                }
-
-                if (paramFechaHasta.HasValue)
-                {
-                    parametros.Add("@FechaHasta");
-                    parametros.Add(paramFechaHasta.Value);
-                }
-
-                // Convertir a array y llamar al SP
-                if (parametros.Count > 0) {
-                    dsAgendas = MetodosDatos.ExecuteDataSet("sp_agendas_listar", parametros.ToArray());
-                }
-                else
-                {
-                    dsAgendas = MetodosDatos.ExecuteDataSet("sp_agendas_listar");
-                }
+               
+                dsAgendas = MetodosDatos.ExecuteDataSet("sp_agendas_listar");
+                
 
 
                 List<AgendaVO> listaAgendas = new List<AgendaVO>();
@@ -61,7 +30,7 @@ namespace CapaDatos
 
                 return listaAgendas;
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }

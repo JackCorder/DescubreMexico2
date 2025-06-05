@@ -123,6 +123,7 @@
     <Content Include="assets\videos\video1.mp4" />
     <Content Include="assets\videos\video2.mp4" />
     <Content Include="assets\videos\video3.mp4" />
+    <Content Include="BaseDatos\ScriptBD.sql" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -150,6 +151,8 @@
     <Content Include="pages\bellas_artes.aspx" />
     <Content Include="pages\centro_historico.aspx" />
     <Content Include="pages\galeria.aspx" />
+    <Content Include="pages\Gestion\Agenda.aspx" />
+    <Content Include="pages\Gestion\AgendaAlta.aspx" />
     <Content Include="pages\Gestion\GestionIndex.aspx" />
     <Content Include="pages\Gestion\GuiaAlta.aspx" />
     <Content Include="pages\Gestion\GuiaEditar.aspx" />
@@ -289,6 +292,20 @@
     <Compile Include="pages\galeria.aspx.designer.cs">
       <DependentUpon>galeria.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\Gestion\Agenda.aspx.cs">
+      <DependentUpon>Agenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Gestion\Agenda.aspx.designer.cs">
+      <DependentUpon>Agenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Gestion\AgendaAlta.aspx.cs">
+      <DependentUpon>AgendaAlta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Gestion\AgendaAlta.aspx.designer.cs">
+      <DependentUpon>AgendaAlta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\Gestion\GestionIndex.aspx.cs">
       <DependentUpon>GestionIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -414,7 +431,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="pages\Agenda\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

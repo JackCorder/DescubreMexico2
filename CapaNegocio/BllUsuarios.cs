@@ -117,7 +117,7 @@ namespace CapaNegocio
                 string pass = DalUsuarios.GetUsuarioByEmail(Email);
                 return pass;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return "";
             }
