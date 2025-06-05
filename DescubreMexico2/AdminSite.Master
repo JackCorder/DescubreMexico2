@@ -43,9 +43,9 @@
                   <li><a class="dropdown-item" href="Lugares.aspx">Lugares</a></li>
                 </ul>
               </li>
-              <%--<li class="nav-item">
-                <a class="nav-link" href="agenda.aspx">Agenda</a>
-              </li>--%>
+              <li class="nav-item">
+                <a class="nav-link" href="Agenda.aspx">Agenda</a>
+              </li>
               <li class="nav-item">
                   <a class="nav-link" href="../index.aspx">Salir</a>
                 </li>
@@ -56,6 +56,7 @@
       
 </header>
     <form id="form1" runat="server">
+
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
     </form>
     <footer class="bg-dark text-white pt-4 pb-3">
